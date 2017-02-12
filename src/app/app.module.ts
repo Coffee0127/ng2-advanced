@@ -8,13 +8,19 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
+import { FlotComponent } from './flot/flot.component';
+import { RadialComponent } from './radial/radial.component';
+import { RickshawComponent } from './rickshaw/rickshaw.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
     DashboardComponent,
-    CardsComponent
+    CardsComponent,
+    FlotComponent,
+    RadialComponent,
+    RickshawComponent
   ],
   imports: [
     BrowserModule,
