@@ -49,8 +49,6 @@ export class CardsComponent implements OnInit {
           queryParams: { name: 'QueryString by Code' }
         });
         break;
-      default:
-        throw `Unknown paramType: $paramType`;
     }
   }
 }
