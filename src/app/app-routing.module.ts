@@ -5,9 +5,6 @@ import { fallbackRoute } from './shared/fallback-route';
 
 import { CardsComponent } from './cards/cards.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { FlotComponent } from './flot/flot.component';
-import { RadialComponent } from './radial/radial.component';
-import { RickshawComponent } from './rickshaw/rickshaw.component';
 
 const routes: Routes = [
   // 設定預設路由，必須加 pathMatch
@@ -19,15 +16,6 @@ const routes: Routes = [
       // 需透過程式才能帶參數重導
       { path: '', component: CardsComponent, data: { type: '9527' } },
       { path: ':type', component: CardsComponent }
-    ]
-  },
-  {
-    path: 'charts/:username',
-    children: [
-      { path: '', redirectTo: 'flot', pathMatch: 'full' },
-      { path: 'flot', component: FlotComponent },
-      { path: 'radial', component: RadialComponent },
-      { path: 'rickshaw', component: RickshawComponent }
     ]
   },
   fallbackRoute

@@ -8,24 +8,21 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
-import { FlotComponent } from './flot/flot.component';
-import { RadialComponent } from './radial/radial.component';
-import { RickshawComponent } from './rickshaw/rickshaw.component';
+
+import { ChartsModule } from './charts/charts.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
     DashboardComponent,
-    CardsComponent,
-    FlotComponent,
-    RadialComponent,
-    RickshawComponent
+    CardsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ChartsModule,
     AppRoutingModule
   ],
   providers: [],
