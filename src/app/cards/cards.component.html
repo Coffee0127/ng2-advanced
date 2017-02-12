@@ -42,8 +42,11 @@
                 <p class="mb-sm">Cras rutrum scelerisque auctor. Donec ultricies blandit venenatis. Nulla facilisi. Praesent diam diam, venenatis lorem par.</p>
               </div>
               <div class="card-footer">
-                <button type="button" class="btn btn-flat btn-default">Action 1</button>
-                <button type="button" class="btn btn-flat btn-default">Action 2</button>
+                <button type="button" class="btn btn-flat btn-default"
+                  [routerLink]="['/cards', 9527, { name: 'Matrix' }]">Matrix</button>
+                <button type="button" class="btn btn-flat btn-default"
+                  [routerLink]="['/cards', 9527]"
+                  [queryParams]="{ name: 'QueryString' }">QueryString</button>
               </div>
             </div>
           </div>

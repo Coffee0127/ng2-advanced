@@ -16,6 +16,11 @@ export class CardsComponent implements OnInit {
     // 透過 Observable 監看 params 變化
     this.route.params.subscribe(params => {
       this.type = params['type'];
+      console.log('Matrix:', params['name']);
+    });
+
+    this.route.queryParams.subscribe(params => {
+      console.log('QueryString:', params['name']);
     });
     // 路由執行當下的資料 (僅初始值)
     // 避免因使用 data 覆蓋 Observable 帶回來的 type
