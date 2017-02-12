@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cards',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
-  constructor() { }
+  type: string;
+
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    // 路由執行當下的資料 (僅初始值)
+    this.type = this.route.snapshot.params['type'];
   }
 
 }
