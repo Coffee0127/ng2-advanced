@@ -6,15 +6,10 @@ import { RadialComponent } from './radial/radial.component';
 import { RickshawComponent } from './rickshaw/rickshaw.component';
 
 const routes: Routes = [
-  {
-    path: 'charts/:username',
-    children: [
-      { path: '', redirectTo: 'flot', pathMatch: 'full' },
-      { path: 'flot', component: FlotComponent },
-      { path: 'radial', component: RadialComponent },
-      { path: 'rickshaw', component: RickshawComponent }
-    ]
-  }
+  { path: '', redirectTo: 'flot', pathMatch: 'full' },
+  { path: 'flot', component: FlotComponent },
+  { path: 'radial', component: RadialComponent },
+  { path: 'rickshaw', component: RickshawComponent }
 ];
 
 @NgModule({

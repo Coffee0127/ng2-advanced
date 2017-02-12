@@ -9,8 +9,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
 
-import { ChartsModule } from './charts/charts.module';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +20,6 @@ import { ChartsModule } from './charts/charts.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ChartsModule,
     AppRoutingModule
   ],
   providers: [],

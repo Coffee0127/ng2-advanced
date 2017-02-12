@@ -18,6 +18,10 @@ const routes: Routes = [
       { path: ':type', component: CardsComponent }
     ]
   },
+  {
+    path: 'charts/:username',
+    loadChildren: './charts/charts.module#ChartsModule'
+  },
   fallbackRoute
 ];
 
