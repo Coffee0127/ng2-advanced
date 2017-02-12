@@ -30,4 +30,19 @@ export class CardsComponent implements OnInit {
   goCards(type) {
     this.router.navigateByUrl('/cards/' + type);
   }
+
+  goCards2(paramType, type) {
+    switch (paramType) {
+      case 'MX':
+        this.router.navigate(['/cards', type, { name: 'Matrix by Code' }]);
+        break;
+      case 'QS':
+        this.router.navigate(['/cards', type], {
+          queryParams: { name: 'QueryString by Code' }
+        });
+        break;
+      default:
+        throw `Unknown paramType: $paramType`;
+    }
+  }
 }

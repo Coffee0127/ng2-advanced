@@ -42,11 +42,21 @@
                 <p class="mb-sm">Cras rutrum scelerisque auctor. Donec ultricies blandit venenatis. Nulla facilisi. Praesent diam diam, venenatis lorem par.</p>
               </div>
               <div class="card-footer">
-                <button type="button" class="btn btn-flat btn-default"
-                  [routerLink]="['/cards', 9527, { name: 'Matrix' }]">Matrix</button>
-                <button type="button" class="btn btn-flat btn-default"
-                  [routerLink]="['/cards', 9527]"
-                  [queryParams]="{ name: 'QueryString' }">QueryString</button>
+                <div>
+                  <div>Directives:</div>
+                  <button type="button" class="btn btn-flat btn-default"
+                    [routerLink]="['/cards', 9527, { name: 'Matrix' }]">Matrix</button>
+                  <button type="button" class="btn btn-flat btn-default"
+                    [routerLink]="['/cards', 9527]"
+                    [queryParams]="{ name: 'QueryString' }">QueryString</button>
+                </div>
+                <div>
+                  <div>Programmatic:</div>
+                  <button type="button" class="btn btn-flat btn-default"
+                    (click)="goCards2('MX', 'M9527')">Matrix</button>
+                  <button type="button" class="btn btn-flat btn-default"
+                    (click)="goCards2('QS', 'Q9527')">QueryString</button>
+                </div>
               </div>
             </div>
           </div>
