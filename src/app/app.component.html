@@ -1,15 +1,1 @@
-<h1>
-  {{title}}
-</h1>
-
-<ul>
-  <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a [routerLink]="['/']">home</a></li>
-  <li><a [routerLink]="['/', 123, 456]">home(多層次網址)</a></li>
-  <li><a [routerLink]="myPath()">home(透過方法取得)</a></li>
-  <li routerLinkActive="active"><a [routerLink]="['/page2']">page2</a></li>
-  <li><a routerLink="/page2">page2(直接綁定字串)</a></li>
-</ul>
-
-<hr>
-
 <router-outlet></router-outlet>
