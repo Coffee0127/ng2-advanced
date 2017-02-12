@@ -22,7 +22,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'charts',
+    path: 'charts/:username',
     children: [
       { path: '', redirectTo: 'flot', pathMatch: 'full' },
       { path: 'flot', component: FlotComponent },
