@@ -13,8 +13,16 @@ const routes: Routes = [
   // 設定預設路由，必須加 pathMatch
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'cards/:type', component: CardsComponent },
-  { path: 'charts',
+  {
+    path: 'cards',
+    children: [
+      // 需透過程式才能帶參數重導
+      { path: '', component: CardsComponent, data: { type: '9527' } },
+      { path: ':type', component: CardsComponent }
+    ]
+  },
+  {
+    path: 'charts',
     children: [
       { path: '', redirectTo: 'flot', pathMatch: 'full' },
       { path: 'flot', component: FlotComponent },

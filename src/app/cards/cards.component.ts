@@ -14,7 +14,7 @@ export class CardsComponent implements OnInit {
 
   ngOnInit() {
     // 路由執行當下的資料 (僅初始值)
-    this.type = this.route.snapshot.params['type'];
+    this.type = this.route.snapshot.params['type'] || this.route.snapshot.data['type'];
   }
 
 }
