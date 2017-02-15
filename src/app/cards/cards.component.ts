@@ -29,14 +29,15 @@ export class CardsComponent implements OnInit {
 
   goCards(type) {
     // 絕對路徑寫法1
-    // this.router.navigateByUrl('/cards/' + type);
+    this.router.navigateByUrl('/cards/' + type);
     // 絕對路徑寫法2
     // this.router.navigate(['/cards/', type]);
 
     // 使用相對路徑
     // this.router.navigate([type], { relativeTo: this.route });
     // 然後就壞掉了XD，網址會變成 http://localhost:4200/cards/1000/1000，修正如下
-    this.router.navigate(['..', type], { relativeTo: this.route });
+    // this.router.navigate(['..', type], { relativeTo: this.route });
+    // 然後從 http://localhost:4200/cards 連進來就壞掉了XD，所以還是用絕對路徑好了
   }
 
   goCards2(paramType, type) {
