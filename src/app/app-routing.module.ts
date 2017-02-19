@@ -5,11 +5,13 @@ import { fallbackRoute } from './shared/fallback-route';
 
 import { CardsComponent } from './cards/cards.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FormComponent } from './form/form.component';
 
 const routes: Routes = [
   // 設定預設路由，必須加 pathMatch
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/form', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'form', component: FormComponent },
   {
     path: 'cards',
     children: [

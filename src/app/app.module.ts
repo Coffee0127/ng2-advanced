@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
     DashboardComponent,
-    CardsComponent
+    CardsComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
