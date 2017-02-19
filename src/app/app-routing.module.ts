@@ -6,12 +6,14 @@ import { fallbackRoute } from './shared/fallback-route';
 import { CardsComponent } from './cards/cards.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormComponent } from './form/form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 const routes: Routes = [
   // 設定預設路由，必須加 pathMatch
-  { path: '', redirectTo: '/form', pathMatch: 'full' },
+  { path: '', redirectTo: '/reactiveform', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'form', component: FormComponent },
+  { path: 'reactiveform', component: ReactiveFormComponent },
   {
     path: 'cards',
     children: [
