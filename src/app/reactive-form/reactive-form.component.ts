@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { AbstractControl, FormArray, Validators, FormGroup, FormBuilder } from '@angular/forms';
+
+import { NoXuanValidator } from '../shared/no-xuan-validator';
 
 @Component({
   selector: 'app-reactive-form',
@@ -26,17 +28,17 @@ export class ReactiveFormComponent implements OnInit {
   ngOnInit() {
     this.form.addControl('email', this.fb.control('default@example.com', Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)));
 
-    let group1: FormArray = <FormArray> this.form.controls['group1'];
-    group1.insert(group1.length, this.fb.control('Xuan 5'));
+    let group1: FormArray = <FormArray>this.form.controls['group1'];
+    group1.insert(group1.length, this.fb.control('Xuan 5', NoXuanValidator));
   }
 
-  getFieldInvalid(fieldName) {
-    let field = this.form.controls[fieldName];
-    return field.dirty && field.invalid;
+  getFieldInvalid(fieldName, prefix = "") {
+    let field = this.form.get(prefix + fieldName);
+    return field && field.dirty && field.invalid;
   }
 
   addRow() {
-    let group1: FormArray = <FormArray> this.form.controls['group1'];
+    let group1: FormArray = <FormArray>this.form.controls['group1'];
     group1.insert(group1.length, this.fb.control('Xuan ' + (group1.length + 1)));
   }
 }
