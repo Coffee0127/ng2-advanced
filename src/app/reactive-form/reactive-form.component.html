@@ -29,7 +29,7 @@
           </fieldset>
           <button type="button" class="mb-sm btn btn-primary ripple" (click)="addRow()">Add Row<span class="md-ripple"></span></button>
           <div formArrayName="group1">
-            <fieldset *ngFor="let item of form.controls.group1.controls; let i = index">
+            <fieldset *ngFor="let item of form.controls['group1'].controls; let i = index">
               <div class="form-group" [ngClass]="{'has-error': getFieldInvalid(i, 'group1.')}">
                 <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>
                 <div class="col-sm-10">
