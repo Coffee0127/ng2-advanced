@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { ViewChild, Component,  OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { SkyComponent } from './../sky/sky.component';
 
 @Component({
   selector: 'app-cards',
@@ -9,6 +11,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CardsComponent implements OnInit {
 
   type: string;
+
+  // 會找 View 裡面第一個出現的 Component 注入
+  // 透過 Component Type 找到子元件
+  @ViewChild(SkyComponent)
+  sky: SkyComponent;
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
@@ -25,6 +32,16 @@ export class CardsComponent implements OnInit {
     // 路由執行當下的資料 (僅初始值)
     // 避免因使用 data 覆蓋 Observable 帶回來的 type
     this.type = this.type || this.route.snapshot.data['type'];
+
+    console.log('ngOnInit', this.sky.name);
+  }
+
+  ngAfterViewInit() {
+    console.log('ngAfterViewInit', this.sky.name);
+  }
+
+  checkStyInputDirty() {
+    console.log(this.sky.input.dirty);
   }
 
   goCards(type) {
