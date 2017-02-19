@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { SkyComponent } from './sky/sky.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     DashboardComponent,
     CardsComponent,
     FormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    SkyComponent
   ],
   imports: [
     BrowserModule,
