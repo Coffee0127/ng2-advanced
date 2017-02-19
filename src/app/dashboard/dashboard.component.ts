@@ -16,6 +16,10 @@ export class DashboardComponent implements OnInit {
     initDashboard();
   }
 
+  debug() {
+    console.log('Dashboard debug()');
+  }
+
   goCards(type) {
     this.router.navigateByUrl('/cards/' + type);
   }
