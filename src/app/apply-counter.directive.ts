@@ -1,4 +1,4 @@
-import { HostListener, HostBinding, Directive, Input } from '@angular/core';
+import { Renderer, HostListener, HostBinding, Directive, Input, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[data-foo=bar][apply-counter]'
@@ -17,10 +17,15 @@ export class ApplyCounterDirective {
     this.bgClass = !this.bgClass;
   }
 
-  constructor() {
+  constructor(private el: ElementRef, private renderer: Renderer) {
     // setTimeout(() => {
     //   this.bgClass = true;
     // }, 5000);
   }
 
+  ngOnInit() {
+    console.log(this.el.nativeElement);
+    // (this.el.nativeElement as HTMLDivElement).innerHTML = 'Hello World';
+    this.renderer.setElementClass(this.el.nativeElement, 'bg-danger', true);
+  }
 }
