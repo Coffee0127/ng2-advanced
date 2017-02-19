@@ -2,7 +2,8 @@
   <div class="container-fluid">
     <h5 class="mt0">Classic form controls and custom variants</h5>
     <p class="mb-lg">Standard Bootstrap form and input controls with customized UI variations</p>
-    <pre>{{  f.value | json }}</pre>
+    <pre>{{ f.value | json }}</pre>
+    <pre>{{ f.form.status | json }}</pre>
     <div class="card">
       <div class="card-body">
         <form method="get" action="/" class="form-horizontal" #f="ngForm">
@@ -24,7 +25,7 @@
             <div class="form-group">
               <label class="col-sm-2 control-label">With help</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control"><span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                <input type="text" class="form-control" ngModel #m="ngModel" [ngModelOptions]="{ standalone: true }"><span *ngIf="m.dirty" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
               </div>
             </div>
           </fieldset>
