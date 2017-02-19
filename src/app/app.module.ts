@@ -12,6 +12,8 @@ import { FormComponent } from './form/form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { SkyComponent } from './sky/sky.component';
 import { ApplyCounterDirective } from './apply-counter.directive';
+import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ApplyCounterDirective } from './apply-counter.directive';
     FormComponent,
     ReactiveFormComponent,
     SkyComponent,
-    ApplyCounterDirective
+    ApplyCounterDirective,
+    LoginComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
