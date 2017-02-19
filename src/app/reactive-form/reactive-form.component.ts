@@ -34,4 +34,9 @@ export class ReactiveFormComponent implements OnInit {
     let field = this.form.controls[fieldName];
     return field.dirty && field.invalid;
   }
+
+  addRow() {
+    let group1: FormArray = <FormArray> this.form.controls['group1'];
+    group1.insert(group1.length, this.fb.control('Xuan ' + (group1.length + 1)));
+  }
 }
