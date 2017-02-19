@@ -5,14 +5,14 @@
     </div>
     <div class="card-offset">
       <div class="card-offset-item text-left">
-        <ng-content></ng-content>
+        <ng-content select="span.btn"></ng-content>
       </div>
     </div>
     <div class="card-body pt0">
       <h4 class="m0">
         <input type="text" ngModel #input="ngModel">
       </h4>
-      <p class="m0"><span class="mr-sm text-muted">by</span><a href="#">John</a></p>
+      <p class="m0"><span class="mr-sm text-muted">by</span><ng-content select="span.by"></ng-content></p>
     </div>
   </div>
 </div>
