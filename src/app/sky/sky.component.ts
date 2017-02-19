@@ -11,6 +11,9 @@ export class SkyComponent implements OnInit {
   @Input()
   name: string = 'Sky';
 
+  @Input()
+  titleimg: string;
+
   @ViewChild('input') // 透過範本變數 selector 取得 NgModel
   input: NgModel;
 

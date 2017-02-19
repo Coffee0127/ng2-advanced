@@ -1,4 +1,4 @@
-import { ViewChild, Component,  OnInit} from '@angular/core';
+import { ViewChildren, QueryList, ViewChild, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { SkyComponent } from './../sky/sky.component';
@@ -16,6 +16,9 @@ export class CardsComponent implements OnInit {
   // 透過 Component Type 找到子元件
   @ViewChild(SkyComponent)
   sky: SkyComponent;
+
+  @ViewChildren(SkyComponent)
+  skies: QueryList<SkyComponent>;
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
@@ -38,6 +41,10 @@ export class CardsComponent implements OnInit {
 
   ngAfterViewInit() {
     console.log('ngAfterViewInit', this.sky.name);
+
+    this.skies.forEach(v => {
+      console.log(v.titleimg);
+    });
   }
 
   checkStyInputDirty() {
