@@ -1,0 +1,7 @@
+fieldset.ng-invalid {
+  border-color: red;
+}
+
+fieldset.ng-valid {
+  border-color: blue;
+}
