@@ -18,6 +18,7 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.form.addControl('email', this.fb.control('default@example.com', Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)));
   }
 
   getFieldInvalid(fieldName) {
