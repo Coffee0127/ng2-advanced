@@ -51,6 +51,11 @@ export class CardsComponent implements OnInit {
     console.log(this.sky.input.dirty);
   }
 
+  counter = 10;
+  incCounter() {
+    this.counter++;
+  }
+
   goCards(type) {
     // 絕對路徑寫法1
     this.router.navigateByUrl('/cards/' + type);
