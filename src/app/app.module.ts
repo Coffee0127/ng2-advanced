@@ -15,6 +15,9 @@ import { ApplyCounterDirective } from './apply-counter.directive';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 
+import { InputRouteGuard } from './input-route-guard';
+import { LoginRouteGuard } from './login-route-guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +38,7 @@ import { LayoutComponent } from './layout/layout.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [LoginRouteGuard, InputRouteGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

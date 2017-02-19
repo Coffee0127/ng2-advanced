@@ -10,6 +10,9 @@ import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
+import { LoginRouteGuard } from './login-route-guard';
+import { InputRouteGuard } from './input-route-guard';
+
 const routes: Routes = [
   {
     path: '', component: LayoutComponent,
@@ -19,6 +22,7 @@ const routes: Routes = [
       { path: 'reactiveform', component: ReactiveFormComponent },
       {
         path: 'cards',
+        canActivate: [LoginRouteGuard],
         children: [
           // 需透過程式才能帶參數重導
           { path: '', component: CardsComponent, data: { type: '9527' } },
@@ -31,7 +35,7 @@ const routes: Routes = [
       },
     ]
   },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canDeactivate: [InputRouteGuard] },
   fallbackRoute
 ];
 
